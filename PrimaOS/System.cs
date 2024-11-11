@@ -36,6 +36,16 @@ namespace PrimaOS
             Console.BackgroundColor = ConsoleColor.Black;
         }
 
+        public void WriteException(string message, Exception ex)
+        {
+            ColorWriteLine($"{message}: {ex.Message}", ConsoleColor.Black, ConsoleColor.Red);
+        }
+
+        public void WriteError(string message)
+        {
+            ColorWriteLine(message, ConsoleColor.Black, ConsoleColor.Red);
+        }
+
         public List<string> commands = new List<string> {
             "mkdir [path] - create new directory",
             "mk [filename] - create new file",
